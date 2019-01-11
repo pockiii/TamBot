@@ -57,6 +57,9 @@ bot.on("message", async message => {
   if(message.content.includes(`tuzki`)) {
     tuzki.update(message, bot);
   }
+  if(message.content.startsWith(`${prefix}say`)) {
+    message.channel.send(message.content.split("say")[1]);
+  }
   if(message.content.startsWith(`${prefix}super add`)) {
     message.channel.send("I am Tam");
       var lines = message.content.split('\n');
