@@ -67,8 +67,8 @@ bot.on("message", async message => {
       }
   }
   if(message.content.startsWith(`${prefix}add`) && message.member.roles.find("name", "Divine Regulars")) {
-    var k = message.content.match(/'[\w\s.!?\\-]+'/g)[0].slice(1, -1);
-    var v = message.content.match(/'[\w\s.!?\\-]+'/g)[1].slice(1, -1);
+    var k = message.content.match(/'(.*?)'/g)[0].slice(1, -1);
+    var v = message.content.match(/'(.*?)'/g)[1].slice(1, -1);
     hash[k] = v;
   }
   if(message.content.startsWith(``) && message.content.substring(0, message.content.length) in hash) {
